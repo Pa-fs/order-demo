@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+* {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 960px;
+    min-width: 960px;
+    margin: 0 auto;
+}
+.header {
+    background-color: rgb(255, 180, 41);
+    overflow: hidden;
+}
+
+.logo {
+    float: left;
+    display: block;
+}
+.title {
+    margin-left: 30%;
+    float: left;
+}
+
+ul {
+    float: right;
+}
+
+li {
+    float: left;
+    list-style-type: none;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    display: block;
+    padding: 1rem 1rem;
+    margin: 0.5rem 0.2rem;
+}
+
+.order {
+    background-color: green;
+    border-radius: 0.5rem;
+}
+
+
+.category {
+    margin-top: 10px;
+    background-color: aqua;
+    overflow: hidden;
+}
+
+.category > div > ul {
+}
+
+.category_menu {
+    margin: 0 80px;
+}
+
+.category_menu > a {
+    color: #333;
+}
+
+
+.product_list {
+    display: inline-block;
+    /* width: 100%; */
+    overflow: hidden;
+}
+
+.product_list > ul {
+    /* display: inline-block; */
+    /* margin-left: -10px; */
+}
+
+/* margin으로 아이템들 속성 띄움 */
+.item {
+    float: left;
+    margin: 0 0 10px 10px;
+    width: 180px;
+    height: 240px;
+    color: #222;
+}
+
+/* 제일 안쪽 a태그에서 길이를 주면(inline-block) 꽉차게 됨 */
+.item > a {
+    /* color: #333; */
+    background-color: orange;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
