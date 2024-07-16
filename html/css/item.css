@@ -1,0 +1,135 @@
+.product_list {
+    display: inline-block;
+    /* width: 100%; */
+    overflow: hidden;
+}
+
+.product_list > ul {
+    /* display: inline-block; */
+    /* margin-left: -10px; */
+}
+
+/* margin으로 아이템들 속성 띄움 */
+.item {
+    margin: 0 0 10px 10px;
+    width: 180px;
+    height: 240px;
+    text-align: center;
+}
+
+
+li.item {
+    position: relative;
+}
+
+/* 제일 안쪽 a태그에서 길이를 주면(inline-block) 꽉차게 됨 */
+.item > a {
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 2px 2px 2px #ffaaff; /* 가로 세로 거리, 번짐 정도, 색상 지정 */
+    box-shadow: 2px 2px 8px 2px rgba(255, 180, 41, 0.9); /* 수평 거리, 수직 거리, 흐림 정도, 번짐 정도, 색상 */
+    letter-spacing: 0.2rem;
+    background: radial-gradient(circle at 20% 100%, orange, rgba(255, 180, 41, 0.6));
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.item_img {
+    height: 110px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+
+.item_info {
+    position: relative;
+}
+
+/* BEST PRODUCT */
+a.item_best::before {
+    position: absolute;
+    content: 'BEST';
+    color: #fff;
+    font-weight: bold;
+    left: -15px;
+    top: 0px;
+    padding: 5px;
+    background: rgba(151, 144, 8, 0.654);
+    /* border-top: 1px solid #aaa; */
+    border-start-end-radius: 50%;
+    border-end-start-radius: 50%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+
+/* NEW PRODUCT */
+.item_new::after {
+    content: "NEW";
+    font-size: 11px;
+    font-weight: bold;
+    padding: 10px 10px;
+    color: #fff;
+    background: rgb(247, 210, 143);
+    display: block;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    position: absolute;
+    right: -25px;
+    bottom: -10px;
+}
+
+.item_info > .name {
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: normal;
+    margin-top: 10px;
+}
+
+/*
+    position: relative
+	•	설명: 요소를 기본 위치에 상대적으로 배치합니다.
+	•	특징: 요소의 기본 위치를 기준으로 top, right, bottom, left 속성을 사용하여 위치를 조정할 수 있습니다.
+	•	사용 예: 요소를 약간 이동시키고 싶을 때 사용됩니다.
+*/
+.item_info > .txt_shape {
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(to right bottom, #fbff009c, white);
+    margin-top: 10px;
+    font-size: small;
+}
+/* 
+    position: absolute
+	•	설명: 요소를 가장 가까운 relative, absolute, fixed 또는 sticky 부모 요소를 기준으로 배치합니다.
+	•	특징: 요소는 문서 흐름에서 제거되고, 다른 요소들이 그 자리를 차지하게 됩니다.
+	•	사용 예: 요소를 특정 위치에 정확히 배치하고 싶을 때 사용됩니다.
+*/
+/* Bread */
+.item_info > .txt_shape::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -12px;
+    width: 10px;
+    height: 10px;
+    background-color: #8fdb639c;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 80%;
+    border-bottom-left-radius: 80%;
+    border-bottom-right-radius: 30%;
+}
+
+.item_info > .txt_shape::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: -12px;
+    width: 10px;
+    height: 10px;
+    background-color: #8fdb639c;
+    border-top-left-radius: 80%;
+    border-top-right-radius: 30%
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 80%;
+}
