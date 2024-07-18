@@ -24,11 +24,11 @@ li.item {
 
 /* 제일 안쪽 a태그에서 길이를 주면(inline-block) 꽉차게 됨 */
 .item > a {
-    color: rgba(255, 255, 255, 0.8);
-    text-shadow: 2px 2px 2px #ffaaff; /* 가로 세로 거리, 번짐 정도, 색상 지정 */
+    color: black;
+    /* text-shadow: 1px 1px 0px #011200; 가로 세로 거리, 번짐 정도, 색상 지정 */
     box-shadow: 2px 2px 8px 2px rgba(255, 180, 41, 0.9); /* 수평 거리, 수직 거리, 흐림 정도, 번짐 정도, 색상 */
     letter-spacing: 0.2rem;
-    background: radial-gradient(circle at 20% 100%, orange, rgba(255, 180, 41, 0.6));
+    /* background: radial-gradient(circle at 20% 100%, orange, rgba(255, 180, 41, 0.6)); */
     display: inline-block;
     width: 100%;
     height: 100%;
@@ -92,7 +92,9 @@ a.item_best::before {
 	•	특징: 요소의 기본 위치를 기준으로 top, right, bottom, left 속성을 사용하여 위치를 조정할 수 있습니다.
 	•	사용 예: 요소를 약간 이동시키고 싶을 때 사용됩니다.
 */
-.item_info > .txt_shape {
+.txt_shape {
+    color: black;
+    letter-spacing: 0.2rem;
     position: relative;
     display: inline-block;
     background: linear-gradient(to right bottom, #fbff009c, white);
@@ -106,7 +108,7 @@ a.item_best::before {
 	•	사용 예: 요소를 특정 위치에 정확히 배치하고 싶을 때 사용됩니다.
 */
 /* Bread */
-.item_info > .txt_shape::before {
+.txt_shape::before {
     content: '';
     position: absolute;
     top: 5px;
@@ -120,7 +122,7 @@ a.item_best::before {
     border-bottom-right-radius: 30%;
 }
 
-.item_info > .txt_shape::after {
+.txt_shape::after {
     content: '';
     position: absolute;
     top: 5px;
