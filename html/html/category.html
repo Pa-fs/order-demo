@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="../js/category.js" defer></script>
+    <script type="module" src="../js/category.js" defer></script>
   </head>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/category.css" />
@@ -33,21 +33,30 @@
           <div class="menu_category">
             <div>
               <ul>
-                <li class="menu_category_list"><a href="#">빵</a></li>
-                <li class="menu_category_list"><a href="#">케이크</a></li>
-                <li class="menu_category_list"><a href="#">디저트</a></li>
-                <li class="menu_category_list"><a href="#">샌드위치</a></li>
+                <li class="menu_category_list" data-category="1">
+                  <a href="#"><span>빵</span></a>
+                </li>
+                <li class="menu_category_list" data-category="2">
+                  <a href="#"><span>케이크</span></a>
+                </li>
+                <li class="menu_category_list" data-category="3">
+                  <a href="#"><span>디저트</span></a>
+                </li>
+                <li class="menu_category_list" data-category="4">
+                  <a href="#"><span>샌드위치</span></a>
+                </li>
               </ul>
             </div>
           </div>
 
           <!-- RECOMMENDED_LIST -->
           <div class="recommended_area">
+            <!-- dynamic rendering -->
             <ul class="recommended_left_area">
               <li class="recommended_item_wrap">
                 <a class="#">
                   <span class="img">
-                    <img src="../img/salt-bread.jpg" alt="" />
+                    <img src="../img/bread/10.jpg" alt="" />
                   </span>
                   <span class="info">
                     <span></span>
@@ -59,45 +68,9 @@
             </ul>
             <ul class="recommended_right_area">
               <li class="recommended_item_wrap">
-                <a class="#">
+                <a href="#">
                   <span class="img">
-                    <img src="../img/salt-bread.jpg" alt="" />
-                  </span>
-                  <span class="info">
-                    <span></span>
-                    <span class="name">크림 가득 메론빵</span>
-                    <span class="txt_shape">Bread</span>
-                  </span>
-                </a>
-              </li>
-              <li class="recommended_item_wrap">
-                <a class="#">
-                  <span class="img">
-                    <img src="../img/salt-bread.jpg" alt="" />
-                  </span>
-                  <span class="info">
-                    <span></span>
-                    <span class="name">크림 가득 메론빵</span>
-                    <span class="txt_shape">Bread</span>
-                  </span>
-                </a>
-              </li>
-              <li class="recommended_item_wrap">
-                <a class="#">
-                  <span class="img">
-                    <img src="../img/salt-bread.jpg" alt="" />
-                  </span>
-                  <span class="info">
-                    <span></span>
-                    <span class="name">크림 가득 메론빵</span>
-                    <span class="txt_shape">Bread</span>
-                  </span>
-                </a>
-              </li>
-              <li class="recommended_item_wrap">
-                <a class="#">
-                  <span class="img">
-                    <img src="../img/salt-bread.jpg" alt="" />
+                    <img src="../img/bread/10.jpg" alt="" />
                   </span>
                   <span class="info">
                     <span></span>
@@ -111,13 +84,16 @@
         </div>
         <!-- PRODUCT_LIST -->
         <div class="product_list">
-          <ul>
-            <li class="item"><a href="#">크림빵</a></li>
-            <li class="item"><a href="#">메론빵</a></li>
+          <ul class="product_rendering">
+            <!-- dynamic rendering -->
             <li class="item">
               <a class="item_best" href="#">
                 <span class="item_text">소금빵</span>
-                <img class="item_img" src="../img/salt-bread.jpg" alt="" />
+                <img
+                  class="item_img"
+                  src="../img/bread/salt-bread.jpg"
+                  alt=""
+                />
                 <span class="item_info">
                   <span class="name">짜지 않는 고소함</span>
                   <span class="txt_shape">Bread</span>
@@ -125,13 +101,6 @@
                 </span>
               </a>
             </li>
-            <li class="item"><a href="#">콘치즈빵</a></li>
-            <li class="item"><a href="#">치즈크림 가득</a></li>
-            <li class="item"><a href="#">치즈크림 가득</a></li>
-            <li class="item"><a href="#">치즈크림 가득</a></li>
-            <li class="item"><a href="#">치즈크림 가득</a></li>
-            <li class="item"><a href="#">치즈크림 가득</a></li>
-            <li class="item"><a href="#">치즈크림 가득</a></li>
           </ul>
         </div>
       </div>

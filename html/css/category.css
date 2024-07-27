@@ -12,11 +12,7 @@
 
 .menu_category {
   display: inline-block;
-  background: radial-gradient(
-    circle at 20% 100%,
-    orange,
-    rgba(255, 180, 41, 0.1)
-  );
+  background: radial-gradient(circle at 20% 100%, orange, rgb(255, 180, 41));
   overflow: hidden;
   float: left;
   width: 170px;
@@ -48,10 +44,17 @@
 }
 
 .menu_category_list .on {
-  color: black;
+  color: #fff;
   font-weight: bold;
   text-decoration: underline;
   background: rgb(255, 200, 100);
+}
+
+.menu_category_list .on span {
+  padding-left: 16px;
+  margin-left: -16px;
+  background: url(../img/icons/check.png) 0 2px no-repeat;
+  background-size: 15px;
 }
 
 /* RECOMMENDED_AREA */
@@ -105,13 +108,18 @@
 }
 .recommended_area .recommended_left_area .recommended_item_wrap .img {
   display: block;
-  width: 300px;
+  width: 100%;
   height: 300px;
   margin: 0 auto;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
 }
 
 .recommended_area .recommended_left_area .recommended_item_wrap .img > img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .recommended_area .recommended_left_area .recommended_item_wrap .info {
