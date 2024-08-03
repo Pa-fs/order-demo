@@ -6,35 +6,45 @@
     <title>Document</title>
     <script type="module" src="../js/category.js" defer></script>
   </head>
+
+  <link rel="stylesheet" href="../css/tp_hp.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/category.css" />
   <link rel="stylesheet" href="../css/item.css" />
   <body>
-    <div class="container">
-      <div class="header">
-        <div class="logo">
-          <h1>Logo</h1>
-        </div>
-        <div class="title">
-          <h1>빵집 제목</h1>
-        </div>
+    <div class="s-head">
+      <header class="s-header">
         <div>
-          <ul>
-            <li><a href="#">이벤트</a></li>
-            <li><a href="#">신상품</a></li>
-            <li><a href="#">고객센터</a></li>
-            <li><a href="#" class="order">주문하기</a></li>
-          </ul>
+          <img src="../img/logo.png" class="s-logoimg" />
+          <h1 style="z-index: 50">Bread&Cake</h1>
         </div>
+      </header>
+      <nav class="s-nav">
+        <a href="tp_hp.html">홈</a>
+        <a href="category.html">카테고리</a>
+        <a href="ShoppingCartPage.html">장바구니</a>
+        <a href="ex03.html">결제하기</a>
+      </nav>
+      <div class="s-search-div">
+        <input type="text" class="s-input" placeholder="제품을 검색해주세요" />
+        <img src="../img/icons/search.png" class="s-searchimg" />
       </div>
-
+    </div>
+    <div class="page_top">
+      <h2 class="page_title">
+        <span class="tit_bread">빵</span>
+      </h2>
+    </div>
+    <div class="container">
       <div class="content">
         <div class="menu_and_recomended_area">
           <div class="menu_category">
+            <div class="menu_background"></div>
+            <span class="lb_bread">BREAD</span>
             <div>
               <ul>
                 <li class="menu_category_list" data-category="1">
-                  <a href="#"><span>빵</span></a>
+                  <a href="#" class="on"><span class="on">빵</span></a>
                 </li>
                 <li class="menu_category_list" data-category="2">
                   <a href="#"><span>케이크</span></a>
@@ -105,5 +115,11 @@
         </div>
       </div>
     </div>
+
+    <!-- shc footer -->
+    <footer class="s-footer">
+      <p>상호명 : (주)뛰뛰빵빵 주소 : 대구시</p>
+      <p>CopyWrite 2024©뛰뛰빵빵</p>
+    </footer>
   </body>
 </html>

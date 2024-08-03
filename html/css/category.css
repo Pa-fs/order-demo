@@ -1,3 +1,33 @@
+.page_top {
+  position: relative;
+  height: 100px;
+  left: 0;
+  margin: 0 auto;
+  width: 1000px;
+  z-index: 0;
+}
+
+.page_title span {
+  display: inline-block;
+  margin: 0px 80px;
+  color: #1b6060;
+
+  font-size: 1em;
+  margin-block-start: 2em;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+
+.page_title span::before {
+  content: "";
+  position: absolute;
+  margin-top: 6px;
+  width: 10px;
+  height: 25px;
+  background-color: #ffb429;
+  margin-left: -19px;
+}
+
 .menu_and_recomended_area {
   display: inline-block;
   margin-bottom: 30px;
@@ -8,16 +38,50 @@
   /* border: 1px solid #555; */
   overflow: hidden;
   margin-top: 10px;
+  box-sizing: border-box;
 }
 
 .menu_category {
   display: inline-block;
-  background: radial-gradient(circle at 20% 100%, orange, rgb(255, 180, 41));
+  position: relative;
   overflow: hidden;
   float: left;
   width: 170px;
   height: 400px;
-  line-height: 50px;
+  line-height: 35px;
+}
+
+.menu_category > .menu_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1b6060 url("../img/menu.png") no-repeat bottom;
+  background-size: contain;
+  z-index: 1;
+  filter: brightness(50%); /* 이미지 투명도 조절 (또는 다른 방법 사용 가능) */
+}
+
+.menu_category > .lb_bread {
+  position: relative;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 59px;
+  display: block;
+  color: #fff;
+  z-index: 2;
+}
+
+.menu_category > .lb_bread::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 1px;
+  width: 60px;
+  height: 2px;
+  background-color: #fff;
 }
 
 .menu_category > ul {
@@ -28,14 +92,16 @@
   width: 100%;
   margin: 0;
   text-align: center;
-  overflow: hidden;
+  margin-left: -15px;
 }
 
 .menu_category_list a {
+  position: relative;
   display: inline-block;
   width: 100%;
   height: 100%;
-  color: #333;
+  color: #fff;
+  z-index: 2;
 }
 
 .menu_category_list a:hover {
@@ -47,7 +113,7 @@
   color: #fff;
   font-weight: bold;
   text-decoration: underline;
-  background: rgb(255, 200, 100);
+  /* background: rgb(255, 200, 100); */
 }
 
 .menu_category_list .on span {

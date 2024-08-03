@@ -8,6 +8,7 @@
 .product_list > ul {
     /* display: inline-block; */
     /* margin-left: -10px; */
+    margin-bottom: 50px;
 }
 
 /* margin으로 아이템들 속성 띄움 */
@@ -35,6 +36,7 @@ li.item {
     height: 100%;
     overflow: hidden;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .item_img {
@@ -84,7 +86,8 @@ a.item_best::before {
     border-top-left-radius: 50%;
     border-bottom-right-radius: 50%;
     position: absolute;
-    right: -25px;
+    /* right: -25px; */
+    left: -25px;
     bottom: -10px;
 }
 
