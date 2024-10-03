@@ -1,5 +1,8 @@
 package com.pheonix.order_demo.order.entity;
 
+import com.pheonix.order_demo.order.config.Events;
+import com.pheonix.order_demo.order.events.OrderCancelledEvent;
+import com.pheonix.order_demo.order.exception.OrderDomainException;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -25,7 +28,7 @@ public class Order {
     private Date orderDate;
 
     @Enumerated(EnumType.STRING)
-    private OrderStatus status;
+    private OrderStatus orderStatus;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
@@ -42,17 +45,16 @@ public class Order {
         member.getOrders().add(this);
     }
 
-    public void addOrderItem(OrderItem orderItem) {
-        orderItems.add(orderItem);
-        orderItem.setOrder(this);
-    }
-
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Member getMember() {
+        return member;
     }
 
     public Date getOrderDate() {
@@ -63,16 +65,12 @@ public class Order {
         this.orderDate = orderDate;
     }
 
-    public OrderStatus getStatus() {
-        return status;
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
     }
 
-    public void setStatus(OrderStatus status) {
-        this.status = status;
-    }
-
-    public Member getMember() {
-        return member;
+    public void setOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
     }
 
     public List<OrderItem> getOrderItems() {
@@ -81,5 +79,18 @@ public class Order {
 
     public void setOrderItems(List<OrderItem> orderItems) {
         this.orderItems = orderItems;
+    }
+
+    public void addOrderItem(OrderItem orderItem) {
+        orderItems.add(orderItem);
+        orderItem.setOrder(this);
+    }
+
+    public void cancel() {
+        if (orderStatus != OrderStatus.READY) {
+            throw new OrderDomainException("결제 완료 상태 이후는 결제를 취소할 수 없습니다.");
+        }
+        this.orderStatus = OrderStatus.CANCELLED;
+        Events.raise(new OrderCancelledEvent(this.getId()));
     }
 }

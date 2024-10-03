@@ -1,5 +1,5 @@
 package com.pheonix.order_demo.order.entity;
 
 public enum OrderStatus {
-    PENDING, PAID, READY, CANCEL, SHIPPED, COMPLETED
+    PENDING, PAID, READY, CANCEL, CANCELLED, SHIPPED, COMPLETED
 }
