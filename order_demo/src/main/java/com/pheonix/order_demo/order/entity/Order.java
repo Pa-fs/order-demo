@@ -87,10 +87,11 @@ public class Order {
     }
 
     public void cancel() {
-        if (orderStatus != OrderStatus.READY) {
+        if (orderStatus == OrderStatus.PAID) {
+            this.orderStatus = OrderStatus.CANCELLED;
+            Events.raise(new OrderCancelledEvent(this.getId()));
+        } else {
             throw new OrderDomainException("결제 완료 상태 이후는 결제를 취소할 수 없습니다.");
         }
-        this.orderStatus = OrderStatus.CANCELLED;
-        Events.raise(new OrderCancelledEvent(this.getId()));
     }
 }

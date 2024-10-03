@@ -54,7 +54,7 @@ class OrderTest {
     @Test
     public void 주문_취소_테스트() {
         Order order = new Order();
-        order.setOrderStatus(OrderStatus.READY);
+        order.setOrderStatus(OrderStatus.PAID);
         order.setMember(memberRepository.getById(1L));
         orderRepository.save(order);
 
