@@ -99,12 +99,6 @@ class EventServiceTest {
         eventRepository.save(event);
         TimeUnit.SECONDS.sleep(1);
 
-        // 이 부분은 사실 멀티쓰레드로 구현해야 제대로 테스트가 됨
-        // 왜냐하면 res3 이 항상 먼저 실행되기 때문에 결과가 항상 같다
-//        Boolean res3 = eventService.attendEvent(event.getId(), member3.getId());
-//        Boolean res1 = eventService.attendEvent(event.getId(), member1.getId());
-//        Boolean res2 = eventService.attendEvent(event.getId(), member2.getId());
-
         CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
         new Thread(new Accessor(event.getId(), member1.getId(), cyclicBarrier)).start();
         new Thread(new Accessor(event.getId(), member2.getId(), cyclicBarrier)).start();
@@ -133,8 +127,8 @@ class EventServiceTest {
         public void run() {
             log.info("{}, 쓰레드 작업 중", Thread.currentThread().getName());
             try {
-                // 모든 쓰레드가 await 를 호출해야 대기가 풀린다
-                // 만약 한 쓰레드가 인터럽트되거나 타임아웃되면 모든 쓰레드는 예외 발생
+                // CyclicBarrier는 주어진 수의 쓰레드가 모두 await를 호출할 때까지 대기함, 마지막 쓰레드가 도착하면 모든 쓰레드는 동시에 깨어난다
+                // 한 쓰레드가 인터럽트되거나 타임아웃되면 그 쓰레드에 예외가 발생하고 모든 대기 중인 쓰레드도 예외가 발생하여 대기가 해제됨.
                 cyclicBarrier.await();
                 log.info("{}, 대기에서 풀림", Thread.currentThread().getName());
                 eventService.attendEvent(eventId, userId);
