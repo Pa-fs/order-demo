@@ -13,7 +13,6 @@ public class Member {
     private Long id;
     private String name;
 
-
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 
